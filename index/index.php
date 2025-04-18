@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Bem-Vindo á Biblioteca Virtual</h1>
-    <a href="login.php">Login</a>
-    <a href="cadastro.php">Cadastrar-se</a>
+    <a href="../login/login.php">Login</a>
+    <a href="../cadastro/cadastro.php">Cadastrar-se</a>
 </body>
 </html>
