@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Buscar</button>
         </form>
 
-        <h3>Livros Encontrados</h3>
+        <h3>Livros</h3>
         <ul>
             <?php if (count($livros) > 0): ?>
                 <?php foreach ($livros as $livro): ?>
