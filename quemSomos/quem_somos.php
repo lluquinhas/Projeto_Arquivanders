@@ -5,6 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="quemSomos.css">
+    <style>
+        /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #FDF5E4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Cabeçalho com botão */
+header {
+    padding: 10px 0;
+}
+
+header a button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header a button:hover {
+    background-color: #0056b3;
+}
+
+/* Imagem de destaque */
+.pessoasLendo {
+    display: block;
+    max-width: 350px;
+    margin: 30px auto 20px;
+    border-radius: 12px;
+}
+
+/* Texto principal */
+.Texto {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.Texto h1 {
+    font-size: 32px;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Texto p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.Texto span {
+    font-weight: bold;
+}
+
+        </style>
 </head>
 <body>
     <header>

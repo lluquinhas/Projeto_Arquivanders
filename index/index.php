@@ -71,7 +71,136 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Virtual</title>
-    <link rel="stylesheet" href="index.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color:#FDF5E4;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2C3E49;
+    color: #FDF5E4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0 auto 20px;
+    padding: 0;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color:rgb(0, 0, 0);
+    color: white;
+}
+
+/* Seção principal */
+section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(180, 64, 64, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section h2, section h3 {
+    color:rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+/* Formulário de busca */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+form input[type="text"],
+form select {
+    padding: 10px;
+    font-size: 16px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #2C3E49;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color:rgb(115, 27, 2, 0.73);
+}
+
+/* Lista de livros */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+ul li strong {
+    font-size: 18px;
+    display: block;
+    color: #333;
+}
+
+ul li a {
+    color:rgb(31, 106, 205);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagem quando nenhum livro for encontrado */
+p {
+    font-style: italic;
+    color: #777;
+}
+</style>
 </head>
 <body>
     <header>
@@ -80,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <nav>
         <ul>
-            <li><a href="tela_inicial.php">Início</a></li>
+            <li><a href="../tela_inicial/tela_inicial.php">Início</a></li>
         </ul>
     </nav>
 
