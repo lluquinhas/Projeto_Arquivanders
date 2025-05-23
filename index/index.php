@@ -107,7 +107,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color:rgb(0, 0, 0);
+    color:#2C3E49;
     font-weight: bold;
     padding: 8px 16px;
     border: 2px solid transparent;
@@ -115,10 +115,6 @@ nav ul li a {
     transition: 0.3s;
 }
 
-nav ul li a:hover {
-    background-color:rgb(0, 0, 0);
-    color: white;
-}
 
 /* Seção principal */
 section {
@@ -208,8 +204,7 @@ p {
     </header>
 
     <nav>
-        <ul>
-            <li><a href="../tela_inicial/tela_inicial.php">Início</a></li>
+        <ul>            <li><a href="../tela_inicial/tela_inicial.php">Voltar para Tela Inicial</a></li>
         </ul>
     </nav>
 
@@ -221,7 +216,7 @@ p {
                 <option value="">Escolha o gênero</option>
                 <?php 
                 // Gêneros disponíveis, você pode adicionar mais opções
-                $generos = ["Ficção", "Aventura", "Fantasia", "Romance", "Terror", "Mistério"];
+                $generos = ["Ficção", "Aventura", "Fantasia", "Romance", "Terror", "Mistério", "Infantil"];
                 foreach ($generos as $genero): 
                 ?>
                     <option value="<?= $genero ?>" <?= $genero == $generoSelecionado ? 'selected' : '' ?>><?= $genero ?></option>
