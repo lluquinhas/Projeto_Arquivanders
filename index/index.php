@@ -1,5 +1,14 @@
 <?php
 session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../login/login.php");
+    exit();
+}
+
+if (!isset($_SESSION['tipo_usuario'])) {
+    $_SESSION['tipo_usuario'] = 'usuario'; // valor padrão se quiser
+}
+
 include("../conexao.php"); // Conexão com o banco de dados
 
 // Inicializando variáveis de erro e resultados
@@ -115,7 +124,6 @@ nav ul li a {
     transition: 0.3s;
 }
 
-
 /* Seção principal */
 section {
     background-color: white;
@@ -205,6 +213,7 @@ p {
 
     <nav>
         <ul>            <li><a href="../tela_inicial/tela_inicial.php">Voltar para Tela Inicial</a></li>
+                        <li><a href="cadastro.php">Cadastrar Livro</a></li>
         </ul>
     </nav>
 
@@ -229,14 +238,19 @@ p {
         <ul>
             <?php if (count($livros) > 0): ?>
                 <?php foreach ($livros as $livro): ?>
-                    <li>
-                        <strong><?= htmlspecialchars($livro['titulo']) ?></strong> - <?= htmlspecialchars($livro['autor']) ?> (<?= htmlspecialchars($livro['ano_publicacao']) ?>)
-                        <br>
-                        Gênero: <?= htmlspecialchars($livro['genero']) ?>
-                        <br>
-                        <a href="ler_livro.php?arquivo=<?= urlencode($livro['arquivo']) ?>" target="_blank">Ler livro</a>
-                    </li>
-                <?php endforeach; ?>
+    <li>
+        <strong><?= htmlspecialchars($livro['titulo']) ?></strong> - <?= htmlspecialchars($livro['autor']) ?> (<?= htmlspecialchars($livro['ano_publicacao']) ?>)
+        <br>
+        Gênero: <?= htmlspecialchars($livro['genero']) ?>
+        <br>
+        <a href="ler_livro.php?arquivo=<?= urlencode($livro['arquivo']) ?>" target="_blank">Ler livro</a>
+
+        <?php if ($_SESSION['tipo_usuario'] === 'admin'): ?>
+            | <a href="editar.php?id=<?= $livro['id'] ?>">Editar</a>
+            | <a href="excluir.php?id=<?= $livro['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>
             <?php else: ?>
                 <p>Nenhum livro encontrado.</p>
             <?php endif; ?>

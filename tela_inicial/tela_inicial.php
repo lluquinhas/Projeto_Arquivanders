@@ -149,6 +149,7 @@ main {
                 <h1>Que tal conhecer um novo universo hoje?</h1>
                 <p>Conheça nossa vasta coleção de livros e mergulhe no mundo da literatura no conforto da sua casa.</p>
                 <a href="../Cadastro/cadastro.php"><button>Cadastre-se</button></a>
+                <a href="../index/index.php"><button>Livros</button></a>
             </div>
         </section>
         <div class="imagemPrincipal">
